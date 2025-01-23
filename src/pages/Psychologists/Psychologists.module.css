@@ -1,0 +1,76 @@
+.contactsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: hidden;
+  box-sizing: border-box;
+}
+
+.buttonNot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 125%;
+  letter-spacing: -0.01em;
+  color: #fbfbfb;
+  border-radius: 5px;
+  width: 120px;
+  height: 30px;
+  background: var(--button-background-color);
+  border: none;
+  outline: none;
+  outline-offset: 0;
+  margin-top: 32px;
+  margin-bottom: 7%;
+  position: relative;
+  left: calc(87% - 120px);
+  bottom: 0;
+  box-sizing: border-box;
+}
+
+.filterLink {
+  box-sizing: border-box;
+}
+.loader {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 62px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.04vw;
+  line-height: 125%;
+  letter-spacing: -0.01em;
+  color: #fbfbfb;
+  border-radius: 2vw;
+  width: 11.45vw;
+  height: 3.1vw;
+  background: var(--button-background-color);
+  border: none;
+  outline: none;
+  outline-offset: 0;
+  margin-top: 32px;
+  margin-bottom: 7%;
+  position: relative;
+  left: calc(50% - 5.72vw);
+  bottom: 0;
+  box-sizing: border-box;
+}
+.button:hover,
+.button:focus {
+  background: var(--button-background-color-active);
+}
+
+.buttonNot:hover,
+.buttonNot:focus {
+  background: var(--button-background-color-active);
+}

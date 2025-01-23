@@ -1,0 +1,58 @@
+.filterform {
+  margin: 4.2vw auto 2.1vw;
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 77.08vw;
+  height: 10.02vh;
+  border: none;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+
+.filterByBrand:hover,
+.filterByBrand:focus {
+  background: var(--button-background-color-active);
+}
+.brandTitle {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: #8a8a89;
+  margin-bottom: 8px;
+}
+
+.filterByBrand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  width: 226px;
+  height: 48px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: #fbfbfb;
+  background: var(--button-background-color);
+  padding-left: 18px;
+  border: none;
+  outline: none;
+  outline-offset: 0;
+  margin-top: 8px;
+}
+
+filterByBrand::first-chil {
+  margin-top: 8px;
+}
+option {
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 14px;
+  color: rgba(25, 26, 21, 0.3);
+  background-color: #fbfbfb;
+  margin-top: 8px;
+  border: none;
+  outline: none;
+  outline-offset: 0;
+}
