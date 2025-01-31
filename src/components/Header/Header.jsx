@@ -91,13 +91,11 @@ export const Header = () => {
   };
 
   const handleGreenThemeClick = () => {
-    setTheme('green');
+    setTheme('dark');
   };
-  const handleBlueThemeClick = () => {
-    setTheme('blue');
-  };
+
   const handleOrangeThemeClick = () => {
-    setTheme('orange');
+    setTheme('white');
   };
 
   const location = useLocation();
@@ -117,7 +115,7 @@ export const Header = () => {
     <div className={css.header}>
       <div className={css.mainTit}>
         <h3 className={css.mainTitle}>
-          <span className={css.mainTitleSpan}>psychologists.</span>services
+          <span className={css.mainTitleSpan}>Virtual Reality</span>
         </h3>
       </div>
       <div className={css.links}>
@@ -202,15 +200,11 @@ export const Header = () => {
         )}
         <div className={css.theme}>
           <button
-            className={css.greenTheme}
+            className={css.darkTheme}
             onClick={handleGreenThemeClick}
           ></button>
           <button
-            className={css.blueTheme}
-            onClick={handleBlueThemeClick}
-          ></button>
-          <button
-            className={css.orangeTheme}
+            className={css.whiteTheme}
             onClick={handleOrangeThemeClick}
           ></button>
         </div>

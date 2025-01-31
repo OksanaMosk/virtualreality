@@ -1,11 +1,11 @@
 import { useState, useLayoutEffect } from 'react';
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState('green');
+    const [theme, setTheme] = useState('dark');
 
-  useLayoutEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
+    useLayoutEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+    }, [theme]);
 
-  return { theme, setTheme };
+    return { theme, setTheme };
 };

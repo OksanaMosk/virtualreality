@@ -1,460 +1,409 @@
-.homeContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5em;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh;
-  background: var(--background-home);
-}
-
-.left {
-  margin-top: 10%;
-  display: flex;
-  flex-direction: column;
-}
-.about {
-  font-weight: 600;
-  font-size: 6vw;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
-  color: var(--primary-text-color);
-  width: 270px;
-  height: auto;
-}
-.aboutSpan {
-  color: var(--button-background-color);
-  font-style: italic;
-}
-.aboutDetails {
-  margin-top: 10%;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.33;
-  letter-spacing: -0.02em;
-  color: var(--primary-text-color);
-  max-width: 270px;
-  text-align: justify;
-}
-.toLink {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  border-radius: 30px;
-  margin-bottom: auto;
-  margin-top: 10%;
-  width: 235px;
-  height: 60px;
-  color: #fbfbfb;
-  background: var(--button-background-color);
-}
-
-.toLink:hover,
-.toLink:focus {
-  background: var(--button-background-color-active);
-}
-
-.toSvg {
-  padding-left: 8px;
-}
-.right {
-  margin-bottom: 5em;
-  min-width: 380px;
-  min-height: 340px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero {
-  border-radius: 8.2px;
-  width: 300px;
-  height: auto;
-}
-.picture {
-  align-self: center;
-  position: absolute;
-  width: auto;
-}
-
-.heroPart {
-  position: relative;
-  display: flex;
-  top: 5.8em;
-  right: 4em;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  border-radius: 10px;
-  width: 150px;
-  height: 57px;
-  background: var(--button-background-color);
-}
-
-.rightOk {
-  border-radius: 10.5px;
-  width: 35px;
-  height: 35px;
-  background: #fbfbfb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.heroImg {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.heroImgTitle {
-  font-weight: 400;
-  font-size: 8px;
-  color: rgba(251, 251, 251, 0.5);
-}
-.heroImgP {
-  font-weight: 700;
-  font-size: 1.577vw;
-  color: #fbfbfb;
-}
-
-.heroImgDet {
-  border-radius: 8.1px;
-  width: 26px;
-  height: 26px;
-  background: var(--button-background-color);
-  transform: rotate(-15deg);
-  position: relative;
-  bottom: 2.3em;
-  right: 13.6em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fbfbfb;
-}
-
-.heroImgDetSvg {
-  transform: rotate(15deg);
-  width: 6.5px;
-  height: 11.5px;
-}
-
-.heroImgDet2 {
-  border-radius: 8.1px;
-  width: 31px;
-  height: 31px;
-  background: var(--button-background-color);
-  transform: rotate(15deg);
-  position: relative;
-  bottom: 8em;
-  left: 4.3em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media (min-width: 768px) {
-  .homeContainer {
+/* .homeContainer {
     display: flex;
     flex-wrap: wrap;
+    gap: 5em;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
-    background: var(--background-home);
-  }
+    background: var(--greyscale-black-100);
+} */
 
-  .left {
-    margin-top: 5%;
-    display: flex;
-    flex-direction: column;
-  }
-  .about {
-    font-weight: 600;
-    font-size: 5.2vw;
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-    color: var(--primary-text-color);
-    width: 464px;
-    height: auto;
-  }
-  .aboutSpan {
-    color: var(--button-background-color);
-    font-style: italic;
-  }
-  .aboutDetails {
-    margin-top: 10%;
-    font-weight: 500;
-    line-height: 1.33;
-    letter-spacing: -0.02em;
-    color: var(--primary-text-color);
-    max-width: 464px;
-  }
-  .toLink {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    border-radius: 30px;
-    margin-bottom: auto;
-    margin-top: 10%;
-    width: 235px;
-    height: 60px;
-    color: #fbfbfb;
-    background: var(--button-background-color);
-  }
-
-  .toLink:hover,
-  .toLink:focus {
+.toLink:hover,
+.toLink:focus {
     background: var(--button-background-color-active);
-  }
-
-  .toSvg {
-    padding-left: 8px;
-  }
-  .right {
-    min-width: 464px;
-    min-height: 526px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 4em;
-  }
-  .hero {
-    border-radius: 10px;
-    width: 464px;
-  }
-  .picture {
-    align-self: center;
-    position: absolute;
-  }
-
-  .heroPart {
-    position: relative;
-    display: flex;
-    top: 8.1em;
-    right: 8.5em;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    border-radius: 20px;
-    width: 311px;
-    height: 118px;
-    background: var(--button-background-color);
-  }
-
-  .rightOk {
-    border-radius: 13px;
-    width: 54px;
-    height: 54px;
-    background: #fbfbfb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .heroImg {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .heroImgTitle {
-    font-weight: 400;
-    font-size: 14px;
-    color: rgba(251, 251, 251, 0.5);
-  }
-  .heroImgP {
-    font-weight: 700;
-    font-size: 1.577vw;
-    color: #fbfbfb;
-  }
-
-  .heroImgDet {
-    border-radius: 10px;
-    width: 40px;
-    height: 40px;
-    background: var(--button-background-color);
-    transform: rotate(-15deg);
-    position: relative;
-    bottom: 3.5em;
-    right: 23.6em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fbfbfb;
-  }
-  .heroImgDetSvg {
-    transform: rotate(15deg);
-    width: 10px;
-    height: 17px;
-  }
-
-  .heroImgDet2 {
-    border-radius: 10px;
-    width: 48px;
-    height: 48px;
-    background: var(--button-background-color);
-    transform: rotate(15deg);
-    position: relative;
-    bottom: 12em;
-    left: 4.3em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
-@media (min-width: 1440px) {
-  .homeContainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    min-height: 87vh;
-    margin: 0;
-    padding: 0;
-    gap: 0;
-    background: var(--background-home);
-  }
-
-  .left {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  .about {
-    font-weight: 600;
-    font-size: 5.2vw;
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-    color: var(--primary-text-color);
-    width: 38.7vw;
-    height: auto;
-  }
-  .aboutSpan {
-    color: var(--button-background-color);
-    font-style: italic;
-  }
-  .aboutDetails {
-    margin-top: 3.4%;
-    font-weight: 500;
-    text-align: start;
-    line-height: 1.33;
-    letter-spacing: -0.02em;
-    color: var(--primary-text-color);
-    max-width: 33.2vw;
-  }
-  .toLink {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    border-radius: 30px;
-    margin-bottom: auto;
-    margin-top: 6%;
-    width: 235px;
-    height: 60px;
-    color: #fbfbfb;
-    background: var(--button-background-color);
-  }
-
-  .toLink:hover,
-  .toLink:focus {
-    background: var(--button-background-color-active);
-  }
-
-  .toSvg {
+.toSvg {
     padding-left: 8px;
-  }
-  .right {
-    margin: 0;
-    min-width: 464px;
+}
+
+.right {
+    margin-bottom: 5em;
+    min-width: 380px;
+    min-height: 340px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .hero {
-    border-radius: 10px;
-    width: 464px;
+}
+
+.hero {
+    border-radius: 8.2px;
+    width: 300px;
     height: auto;
-  }
-  .picture {
+}
+
+.picture {
     align-self: center;
     position: absolute;
     width: auto;
-  }
+}
 
-  .heroPart {
+.heroPart {
     position: relative;
     display: flex;
-    top: 8.1em;
-    right: 8.5em;
+    top: 5.8em;
+    right: 4em;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 16px;
-    border-radius: 20px;
-    width: 311px;
-    height: 118px;
+    gap: 4px;
+    border-radius: 10px;
+    width: 150px;
+    height: 57px;
     background: var(--button-background-color);
-  }
+}
 
-  .rightOk {
-    border-radius: 13px;
-    width: 54px;
-    height: 54px;
+.rightOk {
+    border-radius: 10.5px;
+    width: 35px;
+    height: 35px;
     background: #fbfbfb;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .heroImg {
+.heroImg {
     display: flex;
     flex-direction: column;
     gap: 8px;
-  }
-  .heroImgTitle {
+}
+
+.heroImgTitle {
     font-weight: 400;
-    font-size: 0.92vw;
+    font-size: 8px;
     color: rgba(251, 251, 251, 0.5);
-  }
-  .heroImgP {
+}
+
+.heroImgP {
     font-weight: 700;
     font-size: 1.577vw;
     color: #fbfbfb;
-  }
+}
 
-  .heroImgDet {
-    border-radius: 10px;
-    width: 40px;
-    height: 40px;
+.heroImgDet {
+    border-radius: 8.1px;
+    width: 26px;
+    height: 26px;
     background: var(--button-background-color);
     transform: rotate(-15deg);
     position: relative;
-    bottom: 3.5em;
-    right: 23.6em;
+    bottom: 2.3em;
+    right: 13.6em;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fbfbfb;
-  }
-  .heroImgDetSvg {
+}
+
+.heroImgDetSvg {
     transform: rotate(15deg);
-  }
-  .heroImgDet2 {
-    border-radius: 10px;
-    width: 48px;
-    height: 48px;
+    width: 6.5px;
+    height: 11.5px;
+}
+
+.heroImgDet2 {
+    border-radius: 8.1px;
+    width: 31px;
+    height: 31px;
     background: var(--button-background-color);
     transform: rotate(15deg);
     position: relative;
-    bottom: 12em;
+    bottom: 8em;
     left: 4.3em;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
+
+@media (min-width: 768px) {
+    .homeContainer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vh;
+        background: var(--background-home);
+    }
+    .left {
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+    }
+    .about {
+        font-weight: 600;
+        font-size: 5.2vw;
+        line-height: 1.02;
+        letter-spacing: -0.02em;
+        color: var(--primary-text-color);
+        width: 464px;
+        height: auto;
+    }
+    .aboutSpan {
+        color: var(--button-background-color);
+        font-style: italic;
+    }
+    .aboutDetails {
+        margin-top: 10%;
+        font-weight: 500;
+        line-height: 1.33;
+        letter-spacing: -0.02em;
+        color: var(--primary-text-color);
+        max-width: 464px;
+    }
+    .toLink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        border-radius: 30px;
+        margin-bottom: auto;
+        margin-top: 10%;
+        width: 235px;
+        height: 60px;
+        color: #fbfbfb;
+        background: var(--button-background-color);
+    }
+    .toLink:hover,
+    .toLink:focus {
+        background: var(--button-background-color-active);
+    }
+    .toSvg {
+        padding-left: 8px;
+    }
+    .right {
+        min-width: 464px;
+        min-height: 526px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4em;
+    }
+    .hero {
+        border-radius: 10px;
+        width: 464px;
+    }
+    .picture {
+        align-self: center;
+        position: absolute;
+    }
+    .heroPart {
+        position: relative;
+        display: flex;
+        top: 8.1em;
+        right: 8.5em;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        border-radius: 20px;
+        width: 311px;
+        height: 118px;
+        background: var(--button-background-color);
+    }
+    .rightOk {
+        border-radius: 13px;
+        width: 54px;
+        height: 54px;
+        background: #fbfbfb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .heroImg {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .heroImgTitle {
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(251, 251, 251, 0.5);
+    }
+    .heroImgP {
+        font-weight: 700;
+        font-size: 1.577vw;
+        color: #fbfbfb;
+    }
+    .heroImgDet {
+        border-radius: 10px;
+        width: 40px;
+        height: 40px;
+        background: var(--button-background-color);
+        transform: rotate(-15deg);
+        position: relative;
+        bottom: 3.5em;
+        right: 23.6em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fbfbfb;
+    }
+    .heroImgDetSvg {
+        transform: rotate(15deg);
+        width: 10px;
+        height: 17px;
+    }
+    .heroImgDet2 {
+        border-radius: 10px;
+        width: 48px;
+        height: 48px;
+        background: var(--button-background-color);
+        transform: rotate(15deg);
+        position: relative;
+        bottom: 12em;
+        left: 4.3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1440px) {
+    .homeContainer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        min-height: 87vh;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+        background: var(--background-home);
+    }
+    .left {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .about {
+        font-weight: 600;
+        font-size: 5.2vw;
+        line-height: 1.02;
+        letter-spacing: -0.02em;
+        color: var(--primary-text-color);
+        width: 38.7vw;
+        height: auto;
+    }
+    .aboutSpan {
+        color: var(--button-background-color);
+        font-style: italic;
+    }
+    .aboutDetails {
+        margin-top: 3.4%;
+        font-weight: 500;
+        text-align: start;
+        line-height: 1.33;
+        letter-spacing: -0.02em;
+        color: var(--primary-text-color);
+        max-width: 33.2vw;
+    }
+    .toLink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        border-radius: 30px;
+        margin-bottom: auto;
+        margin-top: 6%;
+        width: 235px;
+        height: 60px;
+        color: #fbfbfb;
+        background: var(--button-background-color);
+    }
+    .toLink:hover,
+    .toLink:focus {
+        background: var(--button-background-color-active);
+    }
+    .toSvg {
+        padding-left: 8px;
+    }
+    .right {
+        margin: 0;
+        min-width: 464px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero {
+        border-radius: 10px;
+        width: 464px;
+        height: auto;
+    }
+    .picture {
+        align-self: center;
+        position: absolute;
+        width: auto;
+    }
+    .heroPart {
+        position: relative;
+        display: flex;
+        top: 8.1em;
+        right: 8.5em;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        border-radius: 20px;
+        width: 311px;
+        height: 118px;
+        background: var(--button-background-color);
+    }
+    .rightOk {
+        border-radius: 13px;
+        width: 54px;
+        height: 54px;
+        background: #fbfbfb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .heroImg {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .heroImgTitle {
+        font-weight: 400;
+        font-size: 0.92vw;
+        color: rgba(251, 251, 251, 0.5);
+    }
+    .heroImgP {
+        font-weight: 700;
+        font-size: 1.577vw;
+        color: #fbfbfb;
+    }
+    .heroImgDet {
+        border-radius: 10px;
+        width: 40px;
+        height: 40px;
+        background: var(--button-background-color);
+        transform: rotate(-15deg);
+        position: relative;
+        bottom: 3.5em;
+        right: 23.6em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fbfbfb;
+    }
+    .heroImgDetSvg {
+        transform: rotate(15deg);
+    }
+    .heroImgDet2 {
+        border-radius: 10px;
+        width: 48px;
+        height: 48px;
+        background: var(--button-background-color);
+        transform: rotate(15deg);
+        position: relative;
+        bottom: 12em;
+        left: 4.3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

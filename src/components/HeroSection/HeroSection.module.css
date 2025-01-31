@@ -1,0 +1,19 @@
+.image_top {
+    display: block;
+    width: 40vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.light_1 {
+    height: 50vw;
+    position: absolute;
+    top: 100px;
+    right: 0;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+}
