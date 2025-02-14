@@ -1,31 +1,44 @@
 @import '../../index.css';
-:root {
-    --menu-line-vertical-margin: 8px;
-    --menu-line-height: 2px;
-    --offsetY: calc(var(--menu-line-vertical-margin) + var(--menu-line-height));
-}
-
 .header {
     display: flex;
     align-items: center;
     cursor: pointer;
     width: 1438px;
     height: 114px;
-    justify-content: space-evenly;
-    gap: 10px;
+    justify-content: space-between;
     box-sizing: border-box;
     margin: 0;
 }
 
 .mainTit {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.favic {
+    width: 32px;
+    height: 32px;
+}
+
+.mainTitleSpan {
+    background: var(--title);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     font-weight: 700;
     line-height: 120%;
     letter-spacing: -0.02em;
     font-size: clamp(8px, 2vw, 20px);
 }
 
-.mainTitleSpan {
-    color: var(--button-background-color);
+.toLink:hover,
+.toLink:focus,
+.active:hover,
+.active:focus {
+    cursor: pointer;
+    transition: color 2s ease;
+    font-weight: 500;
 }
 
 .links {
@@ -34,33 +47,24 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: 5px;
     width: auto;
 }
 
 .toLink {
     position: relative;
     width: auto;
-    font-weight: 400;
-    font-size: clamp(8px, 2vw, 16px);
+    /* font-size: clamp(8px, 2vw, 16px); */
     letter-spacing: -0.01em;
-    color: var(--primary-text-color);
-    cursor: pointer;
-}
-
-.toLink:hover,
-.toLink:focus,
-.toLink:active {
-    transition: all 0.3s allow-discrete;
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--greyscale-white);
 }
 
 .active {
     position: relative;
-    width: auto;
-    font-weight: 400;
-    font-size: clamp(8px, 2vw, 16px);
-    letter-spacing: -0.01em;
-    color: var(--primary-text-color);
+    font-weight: 300;
+    font-size: 16px;
     cursor: pointer;
     color: var(--button-background-color);
 }
@@ -70,44 +74,67 @@
     gap: 0.5vw;
 }
 
-.login {
-    color: var(--primary-text-color);
-    width: 7.75em;
-    height: 3em;
+.contact {
+    color: var(--links-color);
+    width: 7em;
+    height: 2.5em;
     background: inherit;
-    border: 1px solid rgba(25, 26, 21, 0.2);
-    font-size: 1.04vw;
-    line-height: 125%;
+    line-height: 1.25;
     letter-spacing: -0.01em;
     align-items: center;
     justify-content: center;
-    border-radius: 2vw;
+    border: 1px solid transparent;
+    border-image: linear-gradient(90deg, #0cbaf1 0%, #e95ce9 100%) 1;
+    letter-spacing: -0.01em;
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 16px;
+    z-index: 3;
+}
+
+.login {
+    color: var(--links-color);
+    width: 5em;
+    height: 1.5em;
+    background: inherit;
+    line-height: 1.25;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-image: linear-gradient(90deg, #0cbaf1 0%, #e95ce9 100%) 1;
+    letter-spacing: -0.01em;
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 16px;
+    z-index: 3;
 }
 
 .register {
     background: var(--button-background-color);
-    color: #fbfbfb;
-    width: 11.13vw;
-    border: 1px solid rgba(25, 26, 21, 0.2);
-    font-size: 1.04vw;
-    line-height: 125%;
-    letter-spacing: -0.01em;
-    border-radius: 10.7em;
-    height: 3em;
+    color: var(--links-color);
+    width: 7em;
+    border: 3px solid var(--button-background-color);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.25;
+    height: 1.5em;
     align-items: center;
     justify-content: center;
+    letter-spacing: -0.01em;
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 16px;
+    z-index: 3;
 }
 
+.contact:hover,
+.contact:focus,
 .login:hover,
 .login:focus,
 .register:hover,
 .register:focus {
-    background: var(--button-background-color-active);
-}
-
-.login:hover,
-.login:focus {
-    color: #fbfbfb;
+    background: var(--button-background-color);
+    color: var(--greyscale-white);
 }
 
 .left {
@@ -127,11 +154,11 @@
 .darkTheme,
 .whiteTheme {
     position: relative;
-    width: 25px;
-    height: 25px;
-    border: 3px solid #ca6aeb;
-    border-radius: 50%;
-    z-index: 100;
+    width: 1.3em;
+    height: 1.3em;
+    border: 1px solid transparent;
+    border-image: linear-gradient(90deg, #0cbaf1 0%, #e95ce9 100%) 1;
+    z-index: 3;
 }
 
 .darkTheme {
@@ -182,11 +209,12 @@
 
 .links {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .burgerMenu {
+    position: relative;
     width: 30px;
     height: 50px;
     display: flex;
@@ -198,7 +226,7 @@
 }
 
 .line {
-    width: 30px;
+    width: 100%;
     height: 2px;
     z-index: 10;
     transition: transform 0.1s ease;
@@ -206,7 +234,8 @@
 }
 
 .burgerMenu.open .line:nth-child(1) {
-    transform: translate(0, var(--offsetY)) rotate(45deg);
+    /* transform: translate(0, var(--offsetY)) rotate(45deg); */
+    transform: rotate(45deg) translateY(10px);
 }
 
 .burgerMenu.open .line:nth-child(2) {
@@ -214,29 +243,27 @@
 }
 
 .burgerMenu.open .line:nth-child(3) {
-    transform: translate(0, calc(-1 * var(--offsetY))) rotate(-45deg);
+    /* transform: translate(0, calc(-1 * var(--offsetY))) rotate(-45deg); */
+    transform: rotate(-45deg) translateY(-10px);
 }
 
 .menu {
     list-style-type: none;
-    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 10px;
     left: calc (50vw + 50%);
-    background-color: #fbfbfb;
-    padding: 50px 0 20px 0;
+    background-color: var(--button-background-color);
     width: 110px;
     height: auto;
     z-index: 1;
-    /* Забезпечити, що меню буде під бургер-меню */
     transform: translateY(-200%);
-    transition: transform 0.3s ease;
+    transition: transform 2s ease;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    /* Тінь для ефекту плавного вигляду */
     border-radius: 5px;
-    /* Закруглені кути для меню */
+    padding: 0;
+    margin: 0;
 }
 
 .menu.active {
@@ -246,18 +273,9 @@
 .link {
     display: flex;
     text-decoration: none;
-    color: var(--primary-text-color);
     font-weight: bold;
-    width: 105px;
-    height: 40px;
     padding-left: 5px;
     align-items: center;
-    /* transition: color 0.3s ease; */
-}
-
-.link:hover {
-    font-weight: bold;
-    background-color: var(--light);
 }
 
 body.noscroll {
@@ -269,24 +287,33 @@ body.noscroll {
         display: flex;
         align-items: center;
         cursor: pointer;
-        width: 1438px;
+        width: 100%;
         height: 114px;
-        justify-content: space-evenly;
-        gap: 10px;
         box-sizing: border-box;
         margin: 0;
     }
     .left {
-        gap: 3%;
+        gap: 10%;
     }
     .mainTit {
         padding-left: 0;
     }
     .menu {
+        padding-inline-start: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
         display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 5px;
+        flex-direction: row;
+        position: static;
+        width: 518px;
+        height: 28px;
+        transform: none;
+        background: inherit;
+        box-shadow: none;
+        justify-content: space-between;
+    }
+    .menu.active {
+        transform: none;
     }
     .auth {
         display: flex;
@@ -294,16 +321,28 @@ body.noscroll {
         align-items: center;
         gap: 1%;
     }
+    /* .links {
+        display: flex;
+        justify-content: stretch;
+        align-items: center;
+        width: 518px;
+    } */
     .theme {
-        padding-right: 20px;
+        /* padding-right: 20px; */
     }
-    .greenTheme,
-    .blueTheme,
-    .orangeTheme {
-        position: relative;
-        width: 20px;
-        height: 20px;
-        border: 2px solid rgba(25, 26, 21, 0.1);
-        border-radius: 50%;
+    .link {
+        display: flex;
+        text-decoration: none;
+        color: var(--links-color);
+        font-weight: bold;
+        align-items: center;
+        padding-left: 0;
+        justify-content: center;
+        left: 0;
+        /* width: calc(518px / 5); */
+    }
+    .burgerMenu {
+        display: none;
+        gap: 0;
     }
 }

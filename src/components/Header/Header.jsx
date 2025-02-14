@@ -8,6 +8,7 @@ import ModalWindow from '../ModalWindow/ModalWindow';
 import { useTheme } from '../Themes/Themes';
 import { useNavigate } from 'react-router-dom';
 import css from './Header.module.css';
+import favic from '../../images/favicon.png';
 
 export const Header = () => {
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
@@ -105,29 +106,61 @@ export const Header = () => {
     setCurrentPath(location.pathname);
   }, [location]);
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // Стани бургер-меню
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      setIsSmallScreen(screenWidth <= 1440);
+      console.log(
+        `Ширина екрану: ${screenWidth}, isSmallScreen: ${screenWidth <= 1440}`
+      );
+    };
+
+    handleResize(); // Встановлюємо початкове значення при завантаженні сторінки
+    window.addEventListener('resize', handleResize); // Встановлюємо обробник на зміну розміру вікна
+
+    // Очищаємо обробник при відмонтуванні компонента
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const menuClass = `${css.menu} ${isSmallScreen && isOpen ? css.active : ''} ${
+    !isSmallScreen ? css.visible : ''
+  }`;
+  console.log(menuClass); // Виведення класу в консоль
+  console.log('isSmallScreen:', isSmallScreen);
+  console.log('isOpen:', isOpen);
 
   return (
     <div className={css.header}>
       <div className={css.mainTit}>
+        <img className={css.favic} src={favic} alt="favicon" />
         <h3 className={css.mainTitle}>
           <span className={css.mainTitleSpan}>Virtual Reality</span>
         </h3>
       </div>
       <div className={css.links}>
-        <div
-          className={`${css.burgerMenu} ${isOpen ? css.open : ''}`}
-          onClick={toggleMenu}
+        {isSmallScreen && (
+          <div
+            className={`${css.burgerMenu} ${isOpen ? css.open : ''}`}
+            onClick={toggleMenu}
+          >
+            <div className={css.line}></div>
+            <div className={css.line}></div>
+            <div className={css.line}></div>
+          </div>
+        )}
+        <ul
+          className={`${css.menu} 
+    ${isSmallScreen && isOpen ? css.active || '' : ''} 
+    ${!isSmallScreen ? css.visible || '' : ''}`}
         >
-          <div className={css.line}></div>
-          <div className={css.line}></div>
-          <div className={css.line}></div>
-        </div>
-        <ul className={`${css.menu} ${isOpen ? css.active : ''}`}>
           <li className={css.link}>
             <NavLink
               to="/"
@@ -139,6 +172,42 @@ export const Header = () => {
           </li>
           <li className={css.link}>
             <NavLink
+              to="/"
+              className={`${currentPath === '/' ? css.active : css.toLink}`}
+              onClick={() => setIsOpen(false)}
+            >
+              About us
+            </NavLink>
+          </li>
+          <li className={css.link}>
+            <NavLink
+              to="/"
+              className={`${currentPath === '/' ? css.active : css.toLink}`}
+              onClick={() => setIsOpen(false)}
+            >
+              Service
+            </NavLink>
+          </li>
+          <li className={css.link}>
+            <NavLink
+              to="/"
+              className={`${currentPath === '/' ? css.active : css.toLink}`}
+              onClick={() => setIsOpen(false)}
+            >
+              Page
+            </NavLink>
+          </li>
+          <li className={css.link}>
+            <NavLink
+              to="/"
+              className={`${currentPath === '/' ? css.active : css.toLink}`}
+              onClick={() => setIsOpen(false)}
+            >
+              Blog
+            </NavLink>
+          </li>
+          {/* <li className={css.link}>
+            { <NavLink
               className={`${
                 currentPath === '/psychologists' ? css.active : css.toLink
               }`}
@@ -146,8 +215,8 @@ export const Header = () => {
               onClick={() => setIsOpen(false)}
             >
               Psychologists
-            </NavLink>
-          </li>
+            </NavLink> }  
+          </li> */}
 
           {authenticated && (
             <li className={css.link}>
@@ -164,6 +233,9 @@ export const Header = () => {
           )}
         </ul>
       </div>
+      <button className={css.contact} onClick={openLoginModal}>
+        Contact us
+      </button>
       <div className={css.left}>
         {authenticated ? (
           <div className={css.auth}>

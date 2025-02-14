@@ -5,8 +5,7 @@ body {
     background: var(--background-home);
     justify-content: center;
     align-items: center;
-    font-weight: 400;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Chakra Petch', serif;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -48,6 +47,7 @@ code {
 /* :root {
 	--main-colors-purple: #ca6aeb;
 	--main-colors-blue: #19b5f1;
+    
 	--greyscale-black-100: #18181b;
 	--greyscale-black-80: #252532;
 	--greyscale-grey-1: #b0b0b2;
@@ -59,15 +59,35 @@ code {
 } */
 
 html[data-theme='dark'] {
+    --main-colors-purple: #ca6aeb;
+    --main-colors-blue: #19b5f1;
     --background-home: #18181b;
-    --button-background-color: #ca6aeb;
+    --button-background-color: linear-gradient(90deg, #0cbaf1 0%, #e95ce9 100%);
+    --title: linear-gradient(113deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
     --button-background-color-active: #ca6aeb;
-    --light: #ca6aeb;
+    --links-color: #fff;
+    --greyscale-black-80: #252532;
+    --greyscale-grey-1: #b0b0b2;
+    --greyscale-grey-2: #d1d1d1;
+    --greyscale-white: #18181b;
+    --alerts-success: #00c566;
+    --alerts-error: #ff4747;
+    --alerts-warning: #facc15;
 }
 
 html[data-theme='white'] {
     --background-home: #fff;
-    --button-background-color: #ca6aeb;
+    --main-colors-purple: #ca6aeb;
+    --main-colors-blue: #19b5f1;
+    --button-background-color: linear-gradient(90deg, #0cbaf1 0%, #e95ce9 100%);
+    --title: linear-gradient(113deg, rgba(0, 0, 0, 0) 0%, #000 100%);
     --button-background-color-active: #ca6aeb;
-    --light: rgba(252, 131, 44, 0.2);
+    --links-color: #18181b;
+    --greyscale-black-80: #252532;
+    --greyscale-grey-1: #b0b0b2;
+    --greyscale-grey-2: #d1d1d1;
+    --greyscale-white: #fff;
+    --alerts-success: #00c566;
+    --alerts-error: #ff4747;
+    --alerts-warning: #facc15;
 }

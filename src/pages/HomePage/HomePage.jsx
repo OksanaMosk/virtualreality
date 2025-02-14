@@ -33,7 +33,7 @@ const HomePage = () => {
   console.log('Висота екрану:', screenHeight);
 
   return (
-    <div>
+    <div className={css.homeContainer}>
       <HeroSection />
     </div>
   );
