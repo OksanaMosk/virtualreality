@@ -2,7 +2,7 @@
   "name": "react-homework-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://OksanaMosk.github.io/flights",
+  "homepage": "https://OksanaMosk.github.io/virtualreality",
   "dependencies": {
     "@firebase/app": "^0.10.1",
     "@redux-devtools/extension": "^3.2.6",
