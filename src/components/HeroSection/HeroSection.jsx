@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 
 import { useEffect } from 'react';
 
-import { NavLink, useLocation } from 'react-router-dom';
-import css from './HeroSection.module.css';
+import { useDispatch } from 'react-redux';
 
+import { NavLink, useLocation } from 'react-router-dom';
+
+import css from './HeroSection.module.css';
+import Find from '../Find/Find';
+import FlightResults from '../FlightResults/FlightResults';
 import light_1 from 'images/light_1.png';
 import hero_1x from 'images/hero_1x.png';
 import hero_2x from 'images/hero_2x.png';
@@ -18,6 +22,8 @@ const HeroSection = () => {
   useEffect(() => {
     setCurrentPath(location.pathname);
   }, [location]);
+
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -37,7 +43,10 @@ const HeroSection = () => {
             >
               discover more
             </NavLink>
+            <Find />
+            <FlightResults />
           </div>
+
           <div>
             <picture className={css.picture}>
               <source
@@ -249,7 +258,7 @@ const HeroSection = () => {
           />
         </svg>
       </section>
-      <section className={css.section2}>Section 2 Content</section>
+
       <section className={css.section3}>Section 3 Content</section>
     </div>
   );

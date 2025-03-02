@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-
+import { flightsReducer } from './flights/flights.reducer'; // Підключаємо новий редуктор
+import { airportsReducer } from './airoports/airoports.reducer';
 import {
   persistStore,
   persistReducer,
@@ -13,7 +14,6 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/auth.reducer';
 
-import { doctorsReducer } from './doctors/doctors.reducer';
 import favoritesReducer from './favorites/favorites.reducer';
 
 const authConfig = {
@@ -22,10 +22,16 @@ const authConfig = {
   whitelist: ['token'],
 };
 
-const doctorsConfig = {
-  key: 'doctors',
+const flightsConfig = {
+  key: 'root',
   storage,
-  whitelist: ['doctors'],
+  whitelist: ['flights'],
+};
+
+const airportsConfig = {
+  key: 'airports',
+  storage,
+  whitelist: ['airports'],
 };
 
 const favoritesConfig = {
@@ -37,8 +43,8 @@ const favoritesConfig = {
 
 export const store = configureStore({
   reducer: {
-    doctorsStore: persistReducer(doctorsConfig, doctorsReducer),
-    favoritesStore: persistReducer(favoritesConfig, favoritesReducer),
+    flights: persistReducer(flightsConfig, flightsReducer),
+    airports: airportsReducer(airportsConfig, airportsReducer),
     auth: persistReducer(authConfig, authReducer),
   },
   middleware: getDefaultMiddleware =>

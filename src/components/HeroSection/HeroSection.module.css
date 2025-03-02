@@ -1,76 +1,78 @@
 .image_top {
-    display: block;
-    width: 40vw;
-    position: absolute;
-    top: 0;
-    right: 0;
+  display: block;
+  width: 40vw;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .section1 {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .light_1 {
-    height: 50vw;
-    position: absolute;
-    top: 100px;
-    right: 0;
+  height: 50vw;
+  position: absolute;
+  top: 100px;
+  right: 0;
 }
 
 .heroContainer {
-    padding-top: 13px;
-    display: flex;
-    flex-direction: row;
-    gap: 135px;
-    justify-content: center;
+  padding-top: 13px;
+  display: flex;
+  flex-direction: row;
+  gap: 135px;
+  justify-content: center;
 }
 
 .aboutHero {
-    width: 540px;
-    height: 316px;
+  width: 540px;
+  height: 316px;
 }
 
 .picture {
-    width: 526px;
-    height: 626px;
+  width: 526px;
+  height: 626px;
 }
 
 .hero {
-    font-family: var(--font-family);
-    font-weight: 600;
-    font-size: 64px;
-    letter-spacing: -0.01em;
-    color: var(--links-color);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 64px;
+  letter-spacing: -0.01em;
+  color: var(--links-color);
 }
 
 .about {
-    font-family: var(--font-family);
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 175%;
-    color: var(--greyscale-grey-2);
-    padding-bottom: 12px;
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 175%;
+  color: var(--greyscale-grey-2);
+  padding-bottom: 12px;
 }
 
 .active {
-    background: inherit;
-    line-height: 1.25;
-    align-items: center;
-    justify-content: center;
-    padding: 18px 38px;
-    width: 206px;
-    height: 50px;
-    background: var(--button-background-color);
-    color: var(--links-color);
-    font-family: var(--font-family);
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 100%;
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
+  background: inherit;
+  line-height: 1.25;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 38px;
+  width: 206px;
+  height: 50px;
+  background: var(--button-background-color);
+  color: var(--links-color);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
 }
 
 .active:hover,
 .active:focus {
-    box-shadow: -5px 0 40px 5px rgba(12, 186, 241, 0.5), 5px 0 40px 5px rgba(233, 92, 233, 0.5);
+  box-shadow: -5px 0 40px 5px rgba(12, 186, 241, 0.5),
+    5px 0 40px 5px rgba(233, 92, 233, 0.5);
 }
+/* //////////// */

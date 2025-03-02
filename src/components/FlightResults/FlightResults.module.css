@@ -1,0 +1,62 @@
+/* src/components/FlightResults.module.css */
+
+.resultsContainer {
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.resultsContainer h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.resultsContainer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.resultsContainer li {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background-color: #fff;
+  transition: background-color 0.3s;
+}
+
+.resultsContainer li:hover {
+  background-color: #f1f1f1;
+}
+
+.resultsContainer li span {
+  font-weight: bold;
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ff6347;
+  padding: 20px;
+  border: 1px solid #ff6347;
+  border-radius: 8px;
+  background-color: #ffe6e6;
+}
+
+.noResults {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #28a745;
+  padding: 20px;
+  border: 1px solid #28a745;
+  border-radius: 8px;
+  background-color: #e6ffe6;
+}
