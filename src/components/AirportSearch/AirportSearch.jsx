@@ -45,13 +45,19 @@ const AirportSearch = ({ onSelectAirport }) => {
 
   return (
     <div>
-      <h2>Пошук аеропортів за містом</h2>
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={handleChange}
-        placeholder="Введіть місто"
-      />
+      <form>
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={handleChange}
+          placeholder="Enter Airport"
+          className={css.inputFind}
+        />
+        <button className={css.inputButton} type="submit">
+          <span className={css.buttonLabel}></span>
+          &#128269;
+        </button>
+      </form>
 
       {loading && <div>Завантаження...</div>}
       {error && <div>Помилка: {error}</div>}

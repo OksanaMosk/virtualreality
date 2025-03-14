@@ -37,46 +37,15 @@ const Find = () => {
       <form className={css.formlFind} onSubmit={onFormSubmit}>
         <label className={css.labelFind}>
           Airport of Origin
-          <input
-            className={css.inputFind}
-            type="text"
-            name="searchKey"
-            value={originAirport}
-            onChange={e => setOriginAirport(e.target.value)}
-            placeholder="Enter Origin Airport"
-            onKeyDown={handleKeyDown}
-          />
+          <AirportSearch onSelectAirport={handleSelectOriginAirport} />
         </label>
-        <button className={css.inputButton} type="submit">
-          <span className={css.buttonLabel}></span>
-          &#128269;
-        </button>
       </form>
-
-      {/* Компонент для вибору аеропорту відправлення */}
-      <AirportSearch onSelectAirport={handleSelectOriginAirport} />
-
       <form className={css.formlFind} onSubmit={onFormSubmit}>
         <label className={css.labelFind}>
           Airport of Destination
-          <input
-            className={css.inputFind}
-            type="text"
-            name="searchKey"
-            value={destinationAirport}
-            onChange={e => setDestinationAirport(e.target.value)}
-            placeholder="Enter Destination Airport"
-            onKeyDown={handleKeyDown}
-          />
+          <AirportSearch onSelectAirport={handleSelectDestinationAirport} />
         </label>
-        <button className={css.inputButton} type="submit">
-          <span className={css.buttonLabel}></span>
-          &#128269;
-        </button>
       </form>
-
-      {/* Компонент для вибору аеропорту призначення */}
-      <AirportSearch onSelectAirport={handleSelectDestinationAirport} />
 
       <form className={css.formlFind} onSubmit={onFormSubmit}>
         <label className={css.labelFind}>
