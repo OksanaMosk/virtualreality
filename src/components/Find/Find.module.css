@@ -3,10 +3,12 @@
   flex-direction: row;
   row-gap: 15px;
 } */
+
 .formlFind {
   width: 750px;
   margin-top: 30px;
 }
+
 .labelFind {
   display: inline-block;
   text-align: center;
@@ -38,6 +40,7 @@
   font-size: 18px;
   border: none;
 }
+
 .inputButton {
   display: inline-block;
   width: 30px;
@@ -52,9 +55,11 @@
   cursor: pointer;
   outline: none;
 }
+
 .inputButton:hover {
   opacity: 1;
 }
+
 .buttonLabel {
   position: absolute;
   width: 1px;

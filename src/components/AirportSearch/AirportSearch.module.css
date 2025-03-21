@@ -1,26 +1,25 @@
 .homeContainer {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0 auto;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .homeList {
-    gap: 32px;
-    overflow-y: hidden;
-    margin-inline-start: 0;
-    padding-inline-start: 0;
-    font-weight: 400;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    justify-content: center;
-    box-sizing: border-box;
+  gap: 32px;
+  overflow-y: hidden;
+  margin-inline-start: 0;
+  padding-inline-start: 0;
+  font-weight: 400;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  box-sizing: border-box;
 }
-
 
 /* .labelFind {
     display: inline-block;
@@ -31,58 +30,82 @@
 } */
 
 .inputFind {
-    align-items: flex-start;
-    display: flex;
-    font-size: 18px;
-    padding-left: 10px;
-    margin-top: 10px;
-    background-color: #b1b9cc;
-    border-radius: 10px;
-    width: 287px;
-    height: 30px;
-    cursor: pointer;
-    border: 1px solid #6e6662;
+  align-items: flex-start;
+  display: flex;
+  font-size: 18px;
+  padding-left: 10px;
+  margin-top: 10px;
+  background-color: #b1b9cc;
+  border-radius: 10px;
+  width: 287px;
+  height: 30px;
+  cursor: pointer;
+  border: 1px solid #6e6662;
 }
 
 .inputFind:hover,
 .inputFind:focus {
-    background-color: #e6eaed;
+  background-color: #e6eaed;
 }
 
 .inputFind ::placeholder {
-    font-size: 18px;
-    border: none;
+  font-size: 18px;
+  border: none;
 }
 
 .inputButton {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border: 0;
-    border-radius: 10px;
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: center;
-    background: inherit;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    outline: none;
-    bottom: 30px;
-    left: 55%;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 10px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background: inherit;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  outline: none;
+  bottom: 30px;
+  left: 55%;
 }
 
 .inputButton:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .buttonLabel {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    clip-path: inset(50%);
-    border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.suggestionsList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #fff;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  border: 1px solid #ccc;
+  /* Обведення для списку */
+}
+
+.suggestionItem {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.suggestionItem:hover {
+  background-color: #f0f0f0;
 }

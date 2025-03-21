@@ -42,6 +42,11 @@ const airportsSlice = createSlice({
           'Запит успішно завершено, отримано аеропорти:',
           action.payload
         );
+        console.log(
+          'Запит успішно завершено, отримано аеропорти:',
+          action.payload
+        );
+        console.log('airports після завантаження:', state.airports); // Лог для перевірки аеропортів
       })
       .addCase(fetchAirports.rejected, (state, action) => {
         state.loading = false;

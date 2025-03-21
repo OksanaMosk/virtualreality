@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { flightsReducer } from './flights/flights.reducer'; // Підключаємо новий редуктор
-import { airportsReducer } from './airoports/airoports.reducer';
+import { airportsReducer } from './airports/airports.reducer';
 import {
   persistStore,
   persistReducer,

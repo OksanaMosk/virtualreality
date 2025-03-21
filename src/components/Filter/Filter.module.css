@@ -15,6 +15,7 @@
 .filterByBrand:focus {
   background: var(--button-background-color-active);
 }
+
 .brandTitle {
   font-weight: 500;
   font-size: 14px;
@@ -45,6 +46,7 @@
 filterByBrand::first-chil {
   margin-top: 8px;
 }
+
 option {
   font-weight: 400;
   font-size: 16px;

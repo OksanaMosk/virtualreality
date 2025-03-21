@@ -1,7 +1,8 @@
-import css from './AirportSearch.module.css';
 import React, { useState, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAirports } from '../../redux/airoports/airoports.reducer'; // Вказати правильний шлях
+import { fetchAirports } from '../../redux/airports/airports.reducer'; // Вказати правильний шлях
+import debounce from 'lodash.debounce'; // Імпортуємо debounce з lodash
+import css from './AirportSearch.module.css'; // Імпортуємо файл CSS
 
 const AirportSearch = ({ onSelectAirport }) => {
   const dispatch = useDispatch();
@@ -11,47 +12,58 @@ const AirportSearch = ({ onSelectAirport }) => {
     error,
   } = useSelector(state => state.airports || {});
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState(''); // Локальний стан для введеного терміну
+  const [hasFetched, setHasFetched] = useState(false);
 
-  const [hasFetched, setHasFetched] = useState(false); // Додаємо стан для перевірки, чи вже завантажені аеропорти
-
-  // Завантаження аеропортів тільки один раз при першому рендері
   useEffect(() => {
     if (!hasFetched && airports.length === 0) {
       dispatch(fetchAirports());
-      setHasFetched(true); // Після запиту встановлюємо hasFetched в true
+      setHasFetched(true); // Завантажуємо аеропорти лише один раз
     }
-  }, [dispatch, airports.length, hasFetched]); // Залежить від airports.length та hasFetched
+    console.log('airports при вході в компонент:', airports);
+  }, [dispatch, airports.length, airports, hasFetched]);
 
-  // Фільтрація аеропортів за введеним терміном з useMemo
-  const filteredAirports = useMemo(() => {
-    if (searchTerm === '') {
-      return []; // Якщо нічого не введено — повертаємо порожній масив
-    } else {
-      return airports.filter(airport =>
-        airport.cityCode.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-  }, [searchTerm, airports]); // Залежить від searchTerm та airports
+  // Створюємо debouncedSearchTerm, щоб обробляти введення з затримкою
+  const debouncedSearchTerm = useMemo(() => {
+    return debounce(term => term, 500); // 500 мс - це час затримки
+  }, []);
+
+  // Оновлюємо searchTerm зі затримкою
 
   const handleChange = e => {
-    setSearchTerm(e.target.value); // Оновлюємо значення введеного міста
+    const value = e.target.value;
+    setSearchTerm(value); // Оновлюємо значення при кожному введенні
+    debouncedSearchTerm(value); // Викликаємо debounce
   };
 
+  // Фільтрація аеропортів за дебаунс-терміном
+  const filteredAirports = useMemo(() => {
+    if (debouncedSearchTerm === '') {
+      console.log('TCL: filteredAirports -> []', []); // Лог для порожнього введення
+      return []; // Якщо нічого не введено — повертаємо порожній масив
+    } else {
+      const filtered = airports.filter(airport =>
+        airport.name.toLowerCase().startsWith(debouncedSearchTerm.toLowerCase())
+      );
+      console.log('TCL: filteredAirports ->', filtered); // Лог для відфільтрованих аеропортів
+      return filtered;
+    }
+  }, [debouncedSearchTerm, airports]);
+
   const handleSelectCity = city => {
-    setSearchTerm(city); // Встановлюємо вибране місто як searchTerm
-    onSelectAirport(city); // Викликаємо передану функцію для встановлення вибраного аеропорту
+    setSearchTerm(city); // Встановлюємо вибране місто в searchTerm
+    onSelectAirport(city); // Викликаємо функцію onSelectAirport
   };
 
   return (
-    <div>
+    <div className={css.searchContainer}>
       <form>
         <input
           type="text"
           value={searchTerm}
           onChange={handleChange}
           placeholder="Enter Airport"
-          className={css.inputFind}
+          className={css.inputFind} // Клас для інпуту
         />
         <button className={css.inputButton} type="submit">
           <span className={css.buttonLabel}></span>
@@ -63,11 +75,14 @@ const AirportSearch = ({ onSelectAirport }) => {
       {error && <div>Помилка: {error}</div>}
 
       {filteredAirports.length > 0 && (
-        <ul>
+        <ul className={css.suggestionsList}>
+          {' '}
+          {/* Клас для відображення списку пропозицій */}
           {filteredAirports.map(airport => (
             <li
               key={airport.iataCode}
               onClick={() => handleSelectCity(airport.cityCode)}
+              className={css.suggestionItem}
             >
               {airport.cityCode} - {airport.name}
             </li>
